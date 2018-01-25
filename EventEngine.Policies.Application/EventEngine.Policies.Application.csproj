@@ -50,6 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Events\Contextual\AddPremiumData.cs" />
+    <Compile Include="Events\Contextual\ClosureData.cs" />
+    <Compile Include="Events\Contextual\SurrenderData.cs" />
     <Compile Include="Events\Systemwide\ChargeAppliedData.cs" />
     <Compile Include="Events\Contextual\PolicyCreationData.cs" />
     <Compile Include="Events\Contextual\PremiumReceivedData.cs" />
