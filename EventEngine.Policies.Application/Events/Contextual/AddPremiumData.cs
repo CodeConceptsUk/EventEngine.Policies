@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using EventEngine.Application.Attributes;
-using EventEngine.Application.Interfaces.Events;
+using EventEngine.Attributes;
+using EventEngine.Interfaces.Events;
 
 namespace EventEngine.Policies.Application.Events.Contextual
 {
