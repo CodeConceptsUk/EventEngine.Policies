@@ -2,7 +2,7 @@
 using EventEngine.Attributes;
 using EventEngine.Interfaces.Events;
 
-namespace EventEngine.Policies.Application.Events.Contextual
+namespace EventEngine.Policies.Application.Events.EventData.Contextual
 {
     [EventName("PremiumReceived")]
     public class PremiumReceivedData : IEventData

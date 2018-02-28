@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using EventEngine.Attributes;
 using EventEngine.Interfaces.Events;
 
-namespace EventEngine.Policies.Application.Events.Contextual
+namespace EventEngine.Policies.Application.Events.EventData.Contextual
 {
     [EventName("PremiumAdded")]
     public class AddPremiumData : IEventData

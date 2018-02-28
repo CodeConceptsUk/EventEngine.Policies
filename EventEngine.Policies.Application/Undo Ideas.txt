@@ -1,0 +1,39 @@
+﻿Day1
+----
+NewPolicy
+AddPremium
+PremiumReceived
+* AllocateUnits (Uses rates)
+
+Day2
+----
+* ManagementCharge (% ?? of units)
+
+Day3
+----
+* ManagementCharge (% ?? of units)
+
+...
+
+
+Day 10000
+---------
+Surrender/Maturity (Uses rates)
+
+
+
+Undo events are repository events that change the state to a point in time or event. Event then after run a normal. Example below;
+
+
+Timeline(Filter)		Effective(Order)
+1		1
+2		2
+3		3
+4		
+5		
+6		
+7		Undo (4)
+8		8
+9		9
+10		10
+11	Undo	

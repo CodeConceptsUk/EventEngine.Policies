@@ -1,7 +1,7 @@
 ﻿using EventEngine.Attributes;
 using EventEngine.Interfaces.Events;
 
-namespace EventEngine.Policies.Application.Events.Contextual
+namespace EventEngine.Policies.Application.Events.EventData.Contextual
 {
     [EventName("PolicyCreated")]
     public class PolicyCreationData : IEventData
