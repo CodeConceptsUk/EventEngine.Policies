@@ -1,5 +1,4 @@
-﻿using System;
-using EventEngine.Interfaces.Events;
+﻿using EventEngine.Interfaces.Events;
 using EventEngine.Policies.Application.Events.EventData.Systemwide;
 
 namespace EventEngine.Policies.Application.Views.PolicyView.Evaluators
@@ -8,7 +7,11 @@ namespace EventEngine.Policies.Application.Views.PolicyView.Evaluators
     {
         public void Evaluate(ViewData.Policy view, IEvent @event, ManagementChargeAppliedData eventData)
         {
-            throw new NotImplementedException();
+            if (!view.Funds.ContainsKey(eventData.FundId))
+                return;
+
+            foreach (var fundInstance in view.Funds[eventData.FundId])
+                fundInstance.Units = fundInstance.Units * eventData.ChargeFactor;
         }
     }
 }

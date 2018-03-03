@@ -11,8 +11,10 @@ namespace EventEngine.Policies.Application.Views.PolicyView.ViewData
 
         public string PolicyStatus { get; set; }
 
-        public IDictionary<string, IList<FundInstance>> Funds { get; set; }
+        public IDictionary<string, IList<FundInstance>> Funds { get; set; } = new Dictionary<string, IList<FundInstance>>();
 
-        public IList<Premium> UnallocatedPremiums { get; set; }
+        public IList<PremiumSpread> Premiums { get; set; } = new List<PremiumSpread>();
+
+        public IList<Payment> Payments { get; set; } = new List<Payment>();
     }
-}
+}   

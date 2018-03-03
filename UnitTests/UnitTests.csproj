@@ -52,6 +52,9 @@
     <Reference Include="EventEngine, Version=1.1.54.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\EventEngine.1.1.54\lib\netstandard2.0\EventEngine.dll</HintPath>
     </Reference>
+    <Reference Include="FluentAssertions, Version=5.1.2.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.5.1.2\lib\net47\FluentAssertions.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -71,6 +74,12 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Xbehave.Core, Version=2.3.0.0, Culture=neutral, PublicKeyToken=e4957f48888f9fe8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xbehave.Core.2.3.0\lib\net452\Xbehave.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xbehave.Execution.desktop, Version=2.3.0.0, Culture=neutral, PublicKeyToken=e4957f48888f9fe8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xbehave.Core.2.3.0\lib\net452\Xbehave.Execution.desktop.dll</HintPath>
+    </Reference>
     <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
       <HintPath>..\packages\xunit.abstractions.2.0.1\lib\net35\xunit.abstractions.dll</HintPath>
     </Reference>
@@ -85,8 +94,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\PremiumAlreadyPaidExceptionUnitTests.cs" />
+    <Compile Include="Helpers\CloneHelper.cs" />
     <Compile Include="Views\PolicyView\Evaluators\AddPremiumEvaluatorUnitTests.cs" />
+    <Compile Include="AutoNSubstituteDataAttribute.cs" />
     <Compile Include="Views\PolicyView\Evaluators\ClosureEvaluatorUnitTests.cs" />
+    <Compile Include="Views\PolicyView\Evaluators\FundInstanceUnitAdjustmentEvaluatorUnitTests.cs" />
     <Compile Include="Views\PolicyView\Evaluators\FundUnitAdjustmentEvaluatorUnitTests.cs" />
     <Compile Include="Views\PolicyView\Evaluators\ManagementChargeAppliedEvaluatorUnitTests.cs" />
     <Compile Include="Views\PolicyView\Evaluators\PolicyCreationEvaluatorUnitTests.cs" />
@@ -95,6 +108,7 @@
     <Compile Include="Views\PolicyView\Evaluators\SurrenderEvaluatorUnitTests.cs" />
     <Compile Include="Views\PolicyView\Evaluators\UnitsAllocatedEvaluatorUnitTests.cs" />
     <Compile Include="Views\PolicyView\Evaluators\UnitsDeallocatedEvaluatorUnitTests.cs" />
+    <Compile Include="Views\PolicyView\PolicyUnitTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

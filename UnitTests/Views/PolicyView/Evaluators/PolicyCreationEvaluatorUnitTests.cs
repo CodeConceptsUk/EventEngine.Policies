@@ -1,5 +1,4 @@
-﻿using AutoFixture.Xunit2;
-using EventEngine.Policies.Application.Events.EventData.Contextual;
+﻿using EventEngine.Policies.Application.Events.EventData.Contextual;
 using EventEngine.Policies.Application.Views.PolicyView.Evaluators;
 using Xunit;
 
@@ -7,7 +6,7 @@ namespace UnitTests.Views.PolicyView.Evaluators
 {
     public class PolicyCreationEvaluatorUnitTests
     {
-        [Theory, AutoData]
+        [Theory, AutoNSubstituteData]
         public void WhenTheEventIsReceivedItIsEvaluated(PolicyCreationData eventData)
         {
             var target = new PolicyCreationEvaluator();

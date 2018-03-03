@@ -1,13 +1,13 @@
-﻿using AutoFixture.Xunit2;
-using EventEngine.Policies.Application.Events.EventData.Contextual;
+﻿using EventEngine.Policies.Application.Events.EventData.Contextual;
 using EventEngine.Policies.Application.Views.PolicyView.Evaluators;
+using EventEngine.Policies.Application.Views.PolicyView.ViewData;
 using Xunit;
 
 namespace UnitTests.Views.PolicyView.Evaluators
 {
     public class AddPremiumEvaluatorUnitTests
     {
-        [Theory, AutoData]
+        [Theory, AutoNSubstituteData]
         public void WhenTheEventIsReceivedItIsEvaluated(AddPremiumData eventData)
         {
             var target = new AddPremiumEvaluator();
@@ -15,11 +15,17 @@ namespace UnitTests.Views.PolicyView.Evaluators
 
             target.Evaluate(view, null, eventData);
 
-            Assert.NotNull(view.UnallocatedPremiums);
-            Assert.Equal(eventData.FundSpread.Count, view.UnallocatedPremiums.Count);
-            foreach (var spread in eventData.FundSpread)
+            Assert.NotNull(view.Premiums);
+            Assert.Equal(eventData.PremiumSpread.Count, view.Premiums.Count);
+
+            foreach (var premiumSpread in eventData.PremiumSpread)
             {
-                Assert.Contains(view.UnallocatedPremiums, x => x.Amount == spread.Value && x.FundId == spread.Key && !x.Received && x.PremiumId == eventData.PremiumId);
+                Assert.Contains(view.Premiums, x => 
+                    x.Amount == premiumSpread.Value.Amount && 
+                    x.Id == premiumSpread.Value.Id &&
+                    x.FundId == premiumSpread.Key && 
+                    x.Status == PremiumSpread.Statuses.Awaiting  && 
+                    x.PremiumId == eventData.PremiumId);
             }
         }
     }

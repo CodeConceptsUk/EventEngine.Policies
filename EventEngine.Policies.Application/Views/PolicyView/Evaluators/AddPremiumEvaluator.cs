@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using EventEngine.Interfaces.Events;
+﻿using EventEngine.Interfaces.Events;
 using EventEngine.Policies.Application.Events.EventData.Contextual;
 using EventEngine.Policies.Application.Views.PolicyView.ViewData;
 
@@ -9,16 +8,15 @@ namespace EventEngine.Policies.Application.Views.PolicyView.Evaluators
     {
         public void Evaluate(Policy view, IEvent @event, AddPremiumData eventData)
         {
-            view.UnallocatedPremiums = view.UnallocatedPremiums ?? new List<Premium>();
-
-            foreach (var spread in eventData.FundSpread)
+            foreach (var spread in eventData.PremiumSpread)
             {
-                view.UnallocatedPremiums.Add(new Premium
+                view.Premiums.Add(new PremiumSpread
                 {
-                    Amount = spread.Value,
+                    Amount = spread.Value.Amount,
+                    Id = spread.Value.Id,
                     FundId = spread.Key,
                     PremiumId = eventData.PremiumId,
-                    Received = false
+                    Status = PremiumSpread.Statuses.Awaiting
                 });
             }
         }

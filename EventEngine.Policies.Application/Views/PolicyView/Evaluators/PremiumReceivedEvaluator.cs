@@ -1,26 +1,21 @@
-﻿using System;
+﻿using System.Linq;
 using EventEngine.Interfaces.Events;
 using EventEngine.Policies.Application.Events.EventData.Contextual;
+using EventEngine.Policies.Application.Exceptions;
+using EventEngine.Policies.Application.Views.PolicyView.ViewData;
 
 namespace EventEngine.Policies.Application.Views.PolicyView.Evaluators
 {
-    public class PremiumReceivedEvaluator : IEventEvaluator<ViewData.Policy, PremiumReceivedData>
+    public class PremiumReceivedEvaluator : IEventEvaluator<Policy, PremiumReceivedData>
     {
-        public void Evaluate(ViewData.Policy view, IEvent @event, PremiumReceivedData eventData)
+        public void Evaluate(Policy view, IEvent @event, PremiumReceivedData eventData)
         {
-            throw new NotImplementedException();
-            //view.UnallocatedPremiums = view.UnallocatedPremiums ?? new List<Premium>();
+            var premium = view.Premiums.Single(t => t.PremiumId == eventData.PremiumId);
 
-            //foreach (var spread in eventData.FundSpread)
-            //{
-            //    view.UnallocatedPremiums.Add(new Premium
-            //    {
-            //        Amount = spread.Value,
-            //        FundId = spread.Key,
-            //        PremiumId = eventData.PremiumId,
-            //        Received = false
-            //    });
-            //}
+            if (premium.Status != PremiumSpread.Statuses.Awaiting)
+                throw new PremiumAlreadyPaidException(eventData.PremiumId);
+
+            premium.Status = PremiumSpread.Statuses.Received;
         }
     }
 }

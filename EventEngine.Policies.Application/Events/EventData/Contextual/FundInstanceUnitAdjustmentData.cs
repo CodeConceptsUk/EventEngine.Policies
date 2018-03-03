@@ -4,20 +4,17 @@ using EventEngine.Interfaces.Events;
 
 namespace EventEngine.Policies.Application.Events.EventData.Contextual
 {
-    [EventName("FundUnitAdjustment")]
-    public class FundUnitAdjustmentData : IEventData
+    [EventName("FundInstanceUnitAdjustment")]
+    public class FundInstanceUnitAdjustmentData : IEventData
     {
-        public FundUnitAdjustmentData(string fundId, Guid instanceId, decimal unitAdjustment, string reason = null)
+        public FundInstanceUnitAdjustmentData(Guid fundInstanceId, decimal unitAdjustment, string reason = null)
         {
-            FundId = fundId;
-            InstanceId = instanceId;
+            FundInstanceId = fundInstanceId;
             UnitAdjustment = unitAdjustment;
             Reason = reason;
         }
 
-        public string FundId { get; set; }
-
-        public Guid InstanceId { get; set; }
+        public Guid FundInstanceId { get; set; }
 
         public decimal UnitAdjustment { get; set; }
 

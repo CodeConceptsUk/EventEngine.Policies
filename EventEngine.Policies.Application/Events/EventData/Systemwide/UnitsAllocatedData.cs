@@ -6,9 +6,9 @@ namespace EventEngine.Policies.Application.Events.EventData.Systemwide
     [EventName("UnitsAllocated")]
     public class UnitsAllocatedData : IEventData
     {
-        public string FundId { get; }
+        public string FundId { get; set; }
 
-        public decimal OfferPrice { get; }
+        public decimal OfferPrice { get; set; }
 
         public UnitsAllocatedData(string fundId, decimal offerPrice)
         {

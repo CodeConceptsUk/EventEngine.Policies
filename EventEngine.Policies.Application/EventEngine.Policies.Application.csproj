@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Events\EventData\Contextual\FundInstanceUnitAdjustmentData.cs" />
+    <Compile Include="Exceptions\PremiumAlreadyPaidException.cs" />
     <Compile Include="Views\PolicyView\Evaluators\AddPremiumEvaluator.cs" />
     <Compile Include="Views\PolicyView\Evaluators\ClosureEvaluator.cs" />
     <Compile Include="Views\PolicyView\Evaluators\FundUnitAdjustmentEvaluator.cs" />
@@ -75,8 +77,10 @@
     <Compile Include="Views\PolicyView\Evaluators\UnitsAllocatedEvaluator.cs" />
     <Compile Include="Views\PolicyView\Evaluators\UnitsDeallocatedEvaluator.cs" />
     <Compile Include="Views\PolicyView\ViewData\FundInstance.cs" />
+    <Compile Include="Views\PolicyView\ViewData\Paym.cs" />
+    <Compile Include="Views\PolicyView\ViewData\Payment.cs" />
     <Compile Include="Views\PolicyView\ViewData\Policy.cs" />
-    <Compile Include="Views\PolicyView\ViewData\Premium.cs" />
+    <Compile Include="Views\PolicyView\ViewData\PremiumSpread.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

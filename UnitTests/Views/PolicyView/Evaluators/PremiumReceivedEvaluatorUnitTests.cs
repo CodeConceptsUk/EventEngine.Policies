@@ -1,5 +1,7 @@
-﻿using AutoFixture.Xunit2;
+﻿using System.Collections.Generic;
+using AutoFixture;
 using EventEngine.Policies.Application.Events.EventData.Contextual;
+using EventEngine.Policies.Application.Exceptions;
 using EventEngine.Policies.Application.Views.PolicyView.Evaluators;
 using EventEngine.Policies.Application.Views.PolicyView.ViewData;
 using Xunit;
@@ -8,20 +10,34 @@ namespace UnitTests.Views.PolicyView.Evaluators
 {
     public class PremiumReceivedEvaluatorUnitTests
     {
-        [Theory(Skip = "Not ready!"), AutoData]
+        [Theory, AutoNSubstituteData]
         public void WhenTheEventIsReceivedItIsEvaluated(PremiumReceivedData eventData)
         {
             var target = new PremiumReceivedEvaluator();
-            var view = new Policy();
+            var fixture = new Fixture();
+            var premium = fixture.Build<PremiumSpread>()
+                .With(t => t.PremiumId, eventData.PremiumId)
+                .With(t => t.Status, PremiumSpread.Statuses.Awaiting).Create();
+            var view = new Policy { Premiums = new List<PremiumSpread> { premium } };
 
             target.Evaluate(view, null, eventData);
 
-            //Assert.NotNull(view.UnallocatedPremiums);
-            //Assert.Equal(eventData.FundSpread.Count, view.UnallocatedPremiums.Count);
-            //foreach (var spread in eventData.FundSpread)
-            //{
-            //    Assert.Contains(view.UnallocatedPremiums, x => x.Amount == spread.Value && x.FundId == spread.Key && !x.Received && x.PremiumId == eventData.PremiumId);
-            //}
+            Assert.Equal(PremiumSpread.Statuses.Received, premium.Status);
+        }
+
+        [Theory, AutoNSubstituteData]
+        public void WhenTheEventIsReceivedAnExceptionIsThrownBecauseThePremiumIsAlreadyReceived(PremiumReceivedData eventData)
+        {
+            var target = new PremiumReceivedEvaluator();
+            var fixture = new Fixture();
+            var premium = fixture.Build<PremiumSpread>()
+                .With(t => t.PremiumId, eventData.PremiumId)
+                .With(t => t.Status, PremiumSpread.Statuses.Received).Create();
+            var view = new Policy { Premiums = new List<PremiumSpread> { premium } };
+
+            var expection = Assert.Throws<PremiumAlreadyPaidException>(() => target.Evaluate(view, null, eventData));
+
+            Assert.Equal(eventData.PremiumId, expection.PremiumId);
         }
     }
 }

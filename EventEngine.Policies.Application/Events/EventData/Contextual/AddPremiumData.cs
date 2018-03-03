@@ -8,14 +8,23 @@ namespace EventEngine.Policies.Application.Events.EventData.Contextual
     [EventName("PremiumAdded")]
     public class AddPremiumData : IEventData
     {
-        public AddPremiumData(string premiumId, IDictionary<string, decimal> fundSpread)
+        public AddPremiumData(string premiumId, IDictionary<string, PremiumSpreadData> premiumSpread)
         {
             PremiumId = premiumId;
-            FundSpread = fundSpread;
+            PremiumSpread = premiumSpread;
         }
 
         public string PremiumId { get; set; }
 
-        public IDictionary<string, decimal> FundSpread { get; set; }
+        public IDictionary<string, PremiumSpreadData> PremiumSpread { get; set; }
+
+        public class PremiumSpreadData
+        {
+            public decimal Amount { get; set; }
+
+            public Guid Id { get; set; }
+        }
     }
+
+
 }
