@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using EventEngine.Interfaces;
 
-namespace EventEngine.Policies.Application.Views
+namespace EventEngine.Policies.Application.Views.PolicyView.ViewData
 {
     public class Policy : IView
     {
@@ -9,7 +9,9 @@ namespace EventEngine.Policies.Application.Views
 
         public string CustomerId { get; set; }
 
-        public IList<Fund> Funds { get; set; }
+        public string PolicyStatus { get; set; }
+
+        public IDictionary<string, IList<FundInstance>> Funds { get; set; }
 
         public IList<Premium> UnallocatedPremiums { get; set; }
     }

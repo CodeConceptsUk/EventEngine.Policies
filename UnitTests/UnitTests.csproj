@@ -85,8 +85,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Events\Evaluators\PolicyCreationEvaluatorUnitTests.cs" />
+    <Compile Include="Views\PolicyView\Evaluators\AddPremiumEvaluatorUnitTests.cs" />
+    <Compile Include="Views\PolicyView\Evaluators\ClosureEvaluatorUnitTests.cs" />
+    <Compile Include="Views\PolicyView\Evaluators\FundUnitAdjustmentEvaluatorUnitTests.cs" />
+    <Compile Include="Views\PolicyView\Evaluators\ManagementChargeAppliedEvaluatorUnitTests.cs" />
+    <Compile Include="Views\PolicyView\Evaluators\PolicyCreationEvaluatorUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\PolicyView\Evaluators\PremiumReceivedEvaluatorUnitTests.cs" />
+    <Compile Include="Views\PolicyView\Evaluators\SurrenderEvaluatorUnitTests.cs" />
+    <Compile Include="Views\PolicyView\Evaluators\UnitsAllocatedEvaluatorUnitTests.cs" />
+    <Compile Include="Views\PolicyView\Evaluators\UnitsDeallocatedEvaluatorUnitTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

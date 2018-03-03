@@ -53,8 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Events\Evaluators\AddPremiumEvaluator.cs" />
-    <Compile Include="Events\Evaluators\PolicyCreationEvaluator.cs" />
+    <Compile Include="Views\PolicyView\Evaluators\AddPremiumEvaluator.cs" />
+    <Compile Include="Views\PolicyView\Evaluators\ClosureEvaluator.cs" />
+    <Compile Include="Views\PolicyView\Evaluators\FundUnitAdjustmentEvaluator.cs" />
+    <Compile Include="Views\PolicyView\Evaluators\ManagementChargeAppliedEvaluator.cs" />
+    <Compile Include="Views\PolicyView\Evaluators\PolicyCreationEvaluator.cs" />
     <Compile Include="Events\EventData\Contextual\AddPremiumData.cs" />
     <Compile Include="Events\EventData\Contextual\ClosureData.cs" />
     <Compile Include="Events\EventData\Contextual\SurrenderData.cs" />
@@ -67,10 +70,13 @@
     <Compile Include="Interfaces\Queries\IChargeFactorQuery.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Fund.cs" />
-    <Compile Include="Views\FundInstance.cs" />
-    <Compile Include="Views\Policy.cs" />
-    <Compile Include="Views\Premium.cs" />
+    <Compile Include="Views\PolicyView\Evaluators\PremiumReceivedEvaluator.cs" />
+    <Compile Include="Views\PolicyView\Evaluators\SurrenderEvaluator.cs" />
+    <Compile Include="Views\PolicyView\Evaluators\UnitsAllocatedEvaluator.cs" />
+    <Compile Include="Views\PolicyView\Evaluators\UnitsDeallocatedEvaluator.cs" />
+    <Compile Include="Views\PolicyView\ViewData\FundInstance.cs" />
+    <Compile Include="Views\PolicyView\ViewData\Policy.cs" />
+    <Compile Include="Views\PolicyView\ViewData\Premium.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EventEngine.Policies.Application.Views
+namespace EventEngine.Policies.Application.Views.PolicyView.ViewData
 {
     public class FundInstance
     {
