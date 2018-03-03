@@ -49,8 +49,8 @@
     <Reference Include="Coresian, Version=1.0.14.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Coresian.1.0.14\lib\netstandard2.0\Coresian.dll</HintPath>
     </Reference>
-    <Reference Include="EventEngine, Version=1.1.54.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EventEngine.1.1.54\lib\netstandard2.0\EventEngine.dll</HintPath>
+    <Reference Include="EventEngine, Version=1.1.56.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EventEngine.1.1.56\lib\netstandard2.0\EventEngine.dll</HintPath>
     </Reference>
     <Reference Include="FluentAssertions, Version=5.1.2.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentAssertions.5.1.2\lib\net47\FluentAssertions.dll</HintPath>

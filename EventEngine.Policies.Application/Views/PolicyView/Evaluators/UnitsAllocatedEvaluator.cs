@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using EventEngine.Attributes;
 using EventEngine.Interfaces.Events;
 using EventEngine.Policies.Application.Events.EventData.Systemwide;
 using EventEngine.Policies.Application.Views.PolicyView.ViewData;
 
 namespace EventEngine.Policies.Application.Views.PolicyView.Evaluators
 {
+    [EventName("UnitsAllocated")]
     public class UnitsAllocatedEvaluator : IEventEvaluator<Policy, UnitsAllocatedData>
     {
         public void Evaluate(Policy view, IEvent @event, UnitsAllocatedData eventData)

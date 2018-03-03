@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using EventEngine.Attributes;
 using EventEngine.Interfaces.Events;
 using EventEngine.Policies.Application.Events.EventData.Contextual;
 using EventEngine.Policies.Application.Exceptions;
@@ -6,6 +7,7 @@ using EventEngine.Policies.Application.Views.PolicyView.ViewData;
 
 namespace EventEngine.Policies.Application.Views.PolicyView.Evaluators
 {
+    [EventName("PremiumReceived")]
     public class PremiumReceivedEvaluator : IEventEvaluator<Policy, PremiumReceivedData>
     {
         public void Evaluate(Policy view, IEvent @event, PremiumReceivedData eventData)

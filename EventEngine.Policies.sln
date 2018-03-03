@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventEngine.Policies.Application", "EventEngine.Policies.Application\EventEngine.Policies.Application.csproj", "{92990881-420D-4A17-A7FC-97D6B255DA0C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{664455B0-F4A4-46F0-BCFA-29F809D63639}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{9520086A-8500-4364-B733-4739A8118916}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventEngine.Policies.Console", "EventEngine.Policies.Console\EventEngine.Policies.Console.csproj", "{A4025EB2-12D6-4653-B7D6-0AD1CFFBDD63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{9520086A-8500-4364-B733-4739A8118916}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9520086A-8500-4364-B733-4739A8118916}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9520086A-8500-4364-B733-4739A8118916}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4025EB2-12D6-4653-B7D6-0AD1CFFBDD63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4025EB2-12D6-4653-B7D6-0AD1CFFBDD63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4025EB2-12D6-4653-B7D6-0AD1CFFBDD63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4025EB2-12D6-4653-B7D6-0AD1CFFBDD63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

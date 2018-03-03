@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using EventEngine.Attributes;
 using EventEngine.Interfaces.Events;
 using EventEngine.Policies.Application.Events.EventData.Contextual;
 using EventEngine.Policies.Application.Views.PolicyView.ViewData;
 
 namespace EventEngine.Policies.Application.Views.PolicyView.Evaluators
 {
+    [EventName("FundUnitAdjustment")]
     public class FundUnitAdjustmentEvaluator : IEventEvaluator<Policy, FundUnitAdjustmentData>
     {
         public void Evaluate(Policy view, IEvent @event, FundUnitAdjustmentData eventData)
@@ -25,6 +27,7 @@ namespace EventEngine.Policies.Application.Views.PolicyView.Evaluators
         }
     }
 
+    [EventName("FundInstanceUnitAdjustment")]
     public class FundInstanceUnitAdjustmentEvaluator : IEventEvaluator<Policy, FundInstanceUnitAdjustmentData>
     {
         public void Evaluate(Policy view, IEvent @event, FundInstanceUnitAdjustmentData eventData)
