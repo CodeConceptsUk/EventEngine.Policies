@@ -33,12 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EventEngine, Version=1.1.42.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\EventEngine.1.1.42\lib\netstandard2.0\EventEngine.dll</HintPath>
+    <Reference Include="Coresian, Version=1.0.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Coresian.1.0.14\lib\netstandard2.0\Coresian.dll</HintPath>
+    </Reference>
+    <Reference Include="EventEngine, Version=1.1.54.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EventEngine.1.1.54\lib\netstandard2.0\EventEngine.dll</HintPath>
     </Reference>
     <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -62,6 +65,10 @@
     <Compile Include="Interfaces\Queries\IChargeFactorQuery.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Fund.cs" />
+    <Compile Include="Views\FundInstance.cs" />
+    <Compile Include="Views\Policy.cs" />
+    <Compile Include="Views\Premium.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
