@@ -6,7 +6,7 @@ namespace EventEngine.Policies.Application.Events.EventData.Contextual
     [EventName("PolicyCreated")]
     public class PolicyCreationData : IEventData
     {
-        public PolicyCreationData(string policyNumber, string customerId)
+        public PolicyCreationData(string customerId, string policyNumber)
         {
             PolicyNumber = policyNumber;
             CustomerId = customerId;

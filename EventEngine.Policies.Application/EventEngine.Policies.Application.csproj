@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Events\Evaluators\AddPremiumEvaluator.cs" />
+    <Compile Include="Events\Evaluators\PolicyCreationEvaluator.cs" />
     <Compile Include="Events\EventData\Contextual\AddPremiumData.cs" />
     <Compile Include="Events\EventData\Contextual\ClosureData.cs" />
     <Compile Include="Events\EventData\Contextual\SurrenderData.cs" />
@@ -76,7 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Commands\Handlers\" />
-    <Folder Include="Events\Evaluators\" />
     <Folder Include="Interfaces\Commands\" />
     <Folder Include="Querys\" />
   </ItemGroup>
