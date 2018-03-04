@@ -3,6 +3,7 @@ using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.Resolvers.SpecializedResolvers;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
+using Coresian.Interfaces.Providers;
 using EventEngine.Interfaces;
 using EventEngine.Interfaces.Commands;
 using EventEngine.Policies.Application.Commands;
@@ -16,7 +17,7 @@ namespace EventEngine.Policies.Console
         {
             var container = new WindsorContainer();
             container.Kernel.Resolver.AddSubResolver(new CollectionResolver(container.Kernel));
-            container.Install(new EventEngineInstaller(), new PoliciesInstaller(), new LocalInstaller());
+            container.Install(new CoresianInstaller(), new EventEngineInstaller(), new PoliciesInstaller(), new LocalInstaller());
 
             var commandDispatcher = container.Resolve<ICommandDispatcher>();
             var createNewPolicyCommand = new CreateNewPolicyCommand
@@ -34,6 +35,17 @@ namespace EventEngine.Policies.Console
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(Classes.FromAssemblyNamed(typeof(Policy).Assembly.FullName)
+                .Where(t => t.GetInterfaces().Any())
+                .WithService.AllInterfaces().LifestyleTransient());
+        }
+    }
+
+
+    public class CoresianInstaller : IWindsorInstaller
+    {
+        public void Install(IWindsorContainer container, IConfigurationStore store)
+        {
+            container.Register(Classes.FromAssemblyNamed(typeof(IDateTimeProvider).Assembly.FullName)
                 .Where(t => t.GetInterfaces().Any())
                 .WithService.AllInterfaces().LifestyleTransient());
         }
