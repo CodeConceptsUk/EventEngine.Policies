@@ -94,9 +94,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\Handlers\AddPremiumCommandHandlerUnitTests.cs" />
+    <Compile Include="Commands\Handlers\AdjustFundInstanceUnitsHandlerUnitTests.cs" />
     <Compile Include="Commands\Handlers\CreateNewPolicyHandlerUnitTests.cs" />
     <Compile Include="Exceptions\PremiumAlreadyPaidExceptionUnitTests.cs" />
     <Compile Include="Helpers\CloneHelper.cs" />
+    <Compile Include="Helpers\ExceptionHelpers.cs" />
     <Compile Include="Views\PolicyView\Evaluators\AddPremiumEvaluatorUnitTests.cs" />
     <Compile Include="AutoNSubstituteDataAttribute.cs" />
     <Compile Include="Views\PolicyView\Evaluators\ClosureEvaluatorUnitTests.cs" />

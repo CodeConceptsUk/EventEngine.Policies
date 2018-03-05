@@ -25,6 +25,4 @@ namespace EventEngine.Policies.Application.Events.EventData.Contextual
             public Guid Id { get; set; }
         }
     }
-
-
 }

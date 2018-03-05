@@ -16,17 +16,17 @@ namespace UnitTests.Commands.Handlers
         [Theory, AutoNSubstituteData]
         public void WhenTheHandlerExecutes(IEventFactory eventFactory, CreateNewPolicyCommand createNewPolicyCommand)
         {
-            var exepectedEvent = Substitute.For<IEvent>();
+            var expectedEvent = Substitute.For<IEvent>();
             var target = new CreateNewPolicyHandler(eventFactory);
             var contextId = Guid.NewGuid();
 
             eventFactory.Create(contextId, Arg.Is<PolicyCreationData>(data =>
                 data.CustomerId == createNewPolicyCommand.CustomerId &&
-                data.PolicyNumber == createNewPolicyCommand.PolicyNumber)).Returns(exepectedEvent);
+                data.PolicyNumber == createNewPolicyCommand.PolicyNumber)).Returns(expectedEvent);
 
             var result = target.Execute(contextId, createNewPolicyCommand);
 
-            Assert.Contains(exepectedEvent, result);
+            Assert.Contains(expectedEvent, result);
         }
     }
 }

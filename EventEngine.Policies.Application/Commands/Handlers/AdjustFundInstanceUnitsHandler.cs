@@ -7,19 +7,19 @@ using EventEngine.Policies.Application.Events.EventData.Contextual;
 
 namespace EventEngine.Policies.Application.Commands.Handlers
 {
-    public class CreateNewPolicyHandler : ICommandHandler<CreateNewPolicyCommand>
+    public class AdjustFundInstanceUnitsHandler : ICommandHandler<AdjustFundInstanceUnitsCommand>
     {
         private readonly IEventFactory _eventFactory;
 
-        public CreateNewPolicyHandler(IEventFactory eventFactory)
+        public AdjustFundInstanceUnitsHandler(IEventFactory eventFactory)
         {
             _eventFactory = eventFactory;
         }
 
-        public IEnumerable<IEvent> Execute(Guid contextId, CreateNewPolicyCommand command)
+        public IEnumerable<IEvent> Execute(Guid contextId, AdjustFundInstanceUnitsCommand command)
         {
             yield return _eventFactory.Create(contextId,
-                new PolicyCreationData(command.CustomerId, command.PolicyNumber));
+                new FundInstanceUnitAdjustmentData(command.FundInstanceId, command.UnitAdjustment, command.Reason));
         }
     }
 }

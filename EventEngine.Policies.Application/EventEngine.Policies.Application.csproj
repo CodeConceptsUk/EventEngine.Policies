@@ -65,7 +65,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\AddPremiumCommand.cs" />
+    <Compile Include="Commands\AdjustFundInstanceUnitsCommand.cs" />
     <Compile Include="Commands\CreateNewPolicyCommand.cs" />
+    <Compile Include="Commands\Handlers\AddPremiumCommandHandler.cs" />
+    <Compile Include="Commands\Handlers\AdjustFundInstanceUnitsHandler.cs" />
     <Compile Include="Commands\Handlers\CreateNewPolicyHandler.cs" />
     <Compile Include="Events\EventData\Contextual\FundInstanceUnitAdjustmentData.cs" />
     <Compile Include="Exceptions\PremiumAlreadyPaidException.cs" />
