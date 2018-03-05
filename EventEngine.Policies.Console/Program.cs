@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.Resolvers.SpecializedResolvers;
 using Castle.MicroKernel.SubSystems.Configuration;
@@ -15,6 +16,7 @@ namespace EventEngine.Policies.Console
     {
         public static void Main(string[] args)
         {
+            var contextId = Guid.NewGuid();
             var container = new WindsorContainer();
             container.Kernel.Resolver.AddSubResolver(new CollectionResolver(container.Kernel));
             container.Install(new CoresianInstaller(), new EventEngineInstaller(), new PoliciesInstaller(), new LocalInstaller());
@@ -25,7 +27,7 @@ namespace EventEngine.Policies.Console
                 CustomerId = "A1",
                 PolicyNumber = "P1"
             };
-            commandDispatcher.Dispatch(createNewPolicyCommand);
+            commandDispatcher.Dispatch(contextId, createNewPolicyCommand);
         }
     }
 
