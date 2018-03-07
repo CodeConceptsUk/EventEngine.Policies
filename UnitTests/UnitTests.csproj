@@ -49,8 +49,8 @@
     <Reference Include="Coresian, Version=1.0.16.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Coresian.1.0.16\lib\netstandard2.0\Coresian.dll</HintPath>
     </Reference>
-    <Reference Include="EventEngine, Version=1.1.60.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EventEngine.1.1.60\lib\netstandard2.0\EventEngine.dll</HintPath>
+    <Reference Include="EventEngine, Version=1.1.61.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EventEngine.1.1.61\lib\netstandard2.0\EventEngine.dll</HintPath>
     </Reference>
     <Reference Include="FluentAssertions, Version=5.1.2.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentAssertions.5.1.2\lib\net47\FluentAssertions.dll</HintPath>
@@ -125,7 +125,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\packages\xunit.analyzers.0.7.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
+    <Analyzer Include="..\packages\xunit.analyzers.0.8.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
