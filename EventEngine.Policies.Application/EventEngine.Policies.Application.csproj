@@ -42,11 +42,11 @@
     <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="Coresian, Version=1.0.16.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Coresian.1.0.16\lib\netstandard2.0\Coresian.dll</HintPath>
+    <Reference Include="Coresian, Version=1.0.17.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Coresian.1.0.17\lib\netstandard2.0\Coresian.dll</HintPath>
     </Reference>
-    <Reference Include="EventEngine, Version=1.1.60.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EventEngine.1.1.60\lib\netstandard2.0\EventEngine.dll</HintPath>
+    <Reference Include="EventEngine, Version=1.1.61.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EventEngine.1.1.61\lib\netstandard2.0\EventEngine.dll</HintPath>
     </Reference>
     <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">

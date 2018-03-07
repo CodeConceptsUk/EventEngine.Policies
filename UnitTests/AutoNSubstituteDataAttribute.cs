@@ -7,7 +7,7 @@ namespace UnitTests
     public class AutoNSubstituteDataAttribute : AutoDataAttribute
     {
         public AutoNSubstituteDataAttribute()
-            : base(new Fixture()
+            : base(() => new Fixture()
                 .Customize(new AutoConfiguredNSubstituteCustomization()))
         {
         }
