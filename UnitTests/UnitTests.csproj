@@ -96,7 +96,10 @@
   <ItemGroup>
     <Compile Include="Commands\Handlers\AddPremiumCommandHandlerUnitTests.cs" />
     <Compile Include="Commands\Handlers\AdjustFundInstanceUnitsHandlerUnitTests.cs" />
+    <Compile Include="Commands\Handlers\ApplyManagementChargeHandlerUnitTests.cs" />
+    <Compile Include="Commands\Handlers\ApplyUnitAllocationHandlerUnitTests.cs" />
     <Compile Include="Commands\Handlers\CreateNewPolicyHandlerUnitTests.cs" />
+    <Compile Include="Commands\Handlers\PremiumReceivedHandlerUnitTests.cs" />
     <Compile Include="Exceptions\PremiumAlreadyPaidExceptionUnitTests.cs" />
     <Compile Include="Helpers\CloneHelper.cs" />
     <Compile Include="Helpers\ExceptionHelpers.cs" />

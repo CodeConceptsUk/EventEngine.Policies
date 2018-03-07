@@ -67,10 +67,16 @@
   <ItemGroup>
     <Compile Include="Commands\AddPremiumCommand.cs" />
     <Compile Include="Commands\AdjustFundInstanceUnitsCommand.cs" />
+    <Compile Include="Commands\ApplyManagementChargeCommand.cs" />
+    <Compile Include="Commands\ApplyUnitAllocationCommand.cs" />
     <Compile Include="Commands\CreateNewPolicyCommand.cs" />
     <Compile Include="Commands\Handlers\AddPremiumCommandHandler.cs" />
     <Compile Include="Commands\Handlers\AdjustFundInstanceUnitsHandler.cs" />
+    <Compile Include="Commands\Handlers\ApplyManagementChargeHandler.cs" />
+    <Compile Include="Commands\Handlers\ApplyUnitAllocationHandler.cs" />
     <Compile Include="Commands\Handlers\CreateNewPolicyHandler.cs" />
+    <Compile Include="Commands\Handlers\PremiumReceivedHandler.cs" />
+    <Compile Include="Commands\PremiumReceivedCommand.cs" />
     <Compile Include="Events\EventData\Contextual\FundInstanceUnitAdjustmentData.cs" />
     <Compile Include="Exceptions\PremiumAlreadyPaidException.cs" />
     <Compile Include="Views\PolicyView\Evaluators\AddPremiumEvaluator.cs" />

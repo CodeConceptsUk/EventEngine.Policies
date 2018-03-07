@@ -9,18 +9,18 @@ using Xunit;
 
 namespace UnitTests.Commands.Handlers
 {
-    public class CreateNewPolicyHandlerUnitTests
+    public class PremiumReceivedHandlerUnitTests
     {
         [Theory, AutoNSubstituteData]
-        public void WhenTheHandlerExecutes(IEventFactory eventFactory, CreateNewPolicyCommand createNewPolicyCommand)
+        public void WhenTheHandlerExecutes(IEventFactory eventFactory, PremiumReceivedCommand createNewPolicyCommand)
         {
             var expectedEvent = Substitute.For<IEvent>();
-            var target = new CreateNewPolicyHandler(eventFactory);
+            var target = new PremiumReceivedHandler(eventFactory);
             var contextId = Guid.NewGuid();
 
-            eventFactory.Create(contextId, Arg.Is<PolicyCreationData>(data =>
-                data.CustomerId == createNewPolicyCommand.CustomerId &&
-                data.PolicyNumber == createNewPolicyCommand.PolicyNumber)).Returns(expectedEvent);
+            eventFactory.Create(contextId, Arg.Is<PremiumReceivedData>(data =>
+                data.PremiumId == createNewPolicyCommand.PremiumId &&
+                data.DateTimeReceived == createNewPolicyCommand.DateTimeReceived)).Returns(expectedEvent);
 
             var result = target.Execute(contextId, createNewPolicyCommand);
 
