@@ -67,9 +67,11 @@
   <ItemGroup>
     <Compile Include="Commands\AddPremiumCommand.cs" />
     <Compile Include="Commands\AdjustFundInstanceUnitsCommand.cs" />
+    <Compile Include="Commands\AdjustUnitInstanceUnitsCommand.cs" />
     <Compile Include="Commands\ApplyManagementChargeCommand.cs" />
     <Compile Include="Commands\ApplyUnitAllocationCommand.cs" />
     <Compile Include="Commands\CreateNewPolicyCommand.cs" />
+    <Compile Include="Commands\DeallocateUnitsCommand.cs" />
     <Compile Include="Commands\Handlers\AddPremiumCommandHandler.cs" />
     <Compile Include="Commands\Handlers\AdjustFundInstanceUnitsHandler.cs" />
     <Compile Include="Commands\Handlers\ApplyManagementChargeHandler.cs" />
@@ -89,9 +91,8 @@
     <Compile Include="Events\EventData\Contextual\SurrenderData.cs" />
     <Compile Include="Events\EventData\Contextual\PolicyCreationData.cs" />
     <Compile Include="Events\EventData\Contextual\PremiumReceivedData.cs" />
-    <Compile Include="Events\EventData\Contextual\FundUnitAdjustmentData.cs" />
     <Compile Include="Events\EventData\Systemwide\ManagementChargeAppliedData.cs" />
-    <Compile Include="Events\EventData\Systemwide\UnitsDeallocatedData.cs" />
+    <Compile Include="Events\EventData\Contextual\UnitsDeallocatedData.cs" />
     <Compile Include="Events\EventData\Systemwide\UnitsAllocatedData.cs" />
     <Compile Include="Interfaces\Queries\IChargeFactorQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

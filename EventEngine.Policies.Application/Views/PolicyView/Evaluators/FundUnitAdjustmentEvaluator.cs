@@ -8,9 +8,9 @@ using EventEngine.Policies.Application.Views.PolicyView.ViewData;
 namespace EventEngine.Policies.Application.Views.PolicyView.Evaluators
 {
     [EventName("FundUnitAdjustment")]
-    public class FundUnitAdjustmentEvaluator : IEventEvaluator<Policy, FundUnitAdjustmentData>
+    public class FundUnitAdjustmentEvaluator : IEventEvaluator<Policy, FundInstanceUnitAdjustmentData>
     {
-        public void Evaluate(Policy view, IEvent @event, FundUnitAdjustmentData eventData)
+        public void Evaluate(Policy view, IEvent @event, FundInstanceUnitAdjustmentData eventData)
         {
             if (!view.Funds.ContainsKey(eventData.FundId))
                 view.Funds[eventData.FundId] = new List<FundInstance>();
@@ -24,19 +24,6 @@ namespace EventEngine.Policies.Application.Views.PolicyView.Evaluators
                 //GuaranteedUnits = null,
                 //MaturityDate =null
             });
-        }
-    }
-
-    [EventName("FundInstanceUnitAdjustment")]
-    public class FundInstanceUnitAdjustmentEvaluator : IEventEvaluator<Policy, FundInstanceUnitAdjustmentData>
-    {
-        public void Evaluate(Policy view, IEvent @event, FundInstanceUnitAdjustmentData eventData)
-        {
-            var fundInstance = view.Funds.Single(t => t.Value.Any(v => v.Id == eventData.FundInstanceId))
-                .Value
-                .Single(t => t.Id == eventData.FundInstanceId);
-
-            fundInstance.Units += eventData.UnitAdjustment;
         }
     }
 }

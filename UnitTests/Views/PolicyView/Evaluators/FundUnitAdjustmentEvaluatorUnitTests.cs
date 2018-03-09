@@ -13,7 +13,7 @@ namespace UnitTests.Views.PolicyView.Evaluators
         public void WhenTheEventIsReceivedItIsEvaluated(string fundId, IEvent @event)
         {
             var fixture = new Fixture();
-            var eventData = fixture.Build<FundUnitAdjustmentData>().With(x => x.FundId, fundId).Create();
+            var eventData = fixture.Build<FundInstanceUnitAdjustmentData>().With(x => x.FundId, fundId).Create();
             var target = new FundUnitAdjustmentEvaluator();
             var view = new Policy();
 

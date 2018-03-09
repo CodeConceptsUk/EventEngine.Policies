@@ -19,7 +19,8 @@ namespace UnitTests.Commands.Handlers
             var contextId = Guid.NewGuid();
 
             eventFactory.Create(contextId, Arg.Is<FundInstanceUnitAdjustmentData>(data =>
-                data.FundInstanceId == adjustFundInstanceUnitsCommand.FundInstanceId &&
+                data.FundId == adjustFundInstanceUnitsCommand.FundId &&
+                data.InstanceId == adjustFundInstanceUnitsCommand.FundInstanceId &&
                 data.UnitAdjustment == adjustFundInstanceUnitsCommand.UnitAdjustment &&
                 data.Reason == adjustFundInstanceUnitsCommand.Reason)).Returns(expectedEvent);
 

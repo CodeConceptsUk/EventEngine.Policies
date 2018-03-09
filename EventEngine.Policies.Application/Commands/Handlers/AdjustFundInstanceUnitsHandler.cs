@@ -19,7 +19,7 @@ namespace EventEngine.Policies.Application.Commands.Handlers
         public IEnumerable<IEvent> Execute(Guid contextId, AdjustFundInstanceUnitsCommand command)
         {
             yield return _eventFactory.Create(contextId,
-                new FundInstanceUnitAdjustmentData(command.FundInstanceId, command.UnitAdjustment, command.Reason));
+                new FundInstanceUnitAdjustmentData(command.FundId, command.FundInstanceId, command.UnitAdjustment, command.Reason));
         }
     }
 }

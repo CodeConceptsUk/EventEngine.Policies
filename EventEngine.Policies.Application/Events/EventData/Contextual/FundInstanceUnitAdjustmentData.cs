@@ -7,14 +7,17 @@ namespace EventEngine.Policies.Application.Events.EventData.Contextual
     [EventName("FundInstanceUnitAdjustment")]
     public class FundInstanceUnitAdjustmentData : IEventData
     {
-        public FundInstanceUnitAdjustmentData(Guid fundInstanceId, decimal unitAdjustment, string reason = null)
+        public FundInstanceUnitAdjustmentData(string fundId, Guid instanceId, decimal unitAdjustment, string reason = null)
         {
-            FundInstanceId = fundInstanceId;
+            FundId = fundId;
+            InstanceId = instanceId;
             UnitAdjustment = unitAdjustment;
             Reason = reason;
         }
 
-        public Guid FundInstanceId { get; set; }
+        public string FundId { get; set; }
+
+        public Guid InstanceId { get; set; }
 
         public decimal UnitAdjustment { get; set; }
 

@@ -1,13 +1,10 @@
-﻿using System;
-using EventEngine.Interfaces.Commands;
+﻿using EventEngine.Interfaces.Commands;
 
 namespace EventEngine.Policies.Application.Commands
 {
-    public class AdjustFundInstanceUnitsCommand : ICommand
+    public class AdjustUnitInstanceUnitsCommand : ICommand
     {
         public string FundId { get; set; }
-
-        public Guid FundInstanceId { get; set; }
 
         public decimal UnitAdjustment { get; set; }
 
